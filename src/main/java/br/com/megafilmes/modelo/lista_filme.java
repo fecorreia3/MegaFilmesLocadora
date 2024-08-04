@@ -27,7 +27,7 @@ public class lista_filme {
 
         String jpql = "SELECT filmes FROM Filmes filmes";
         Query query = em.createQuery(jpql);
-        List<Filmes> pessoas = em.getResultList();
+//        List<Filmes> pessoas = em.getResultList();
 
     }
 
