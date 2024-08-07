@@ -5,11 +5,11 @@
 package br.com.megafilmes.objeto;
 
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -26,8 +26,10 @@ public class Filmes implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     private String titulo;
-    private String genero;
+    @ManyToOne
+    private Genero genero;
     private String dt_compra;
+ 
     private String tipo;
 
     
@@ -35,14 +37,22 @@ public class Filmes implements Serializable {
         
     }  
 
-    public Filmes(Integer id, String titulo, String genero, String dt_compra, String tipo) {
-        this.id = id;
-        this.titulo = titulo;
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
         this.genero = genero;
-        this.dt_compra = dt_compra;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
+
     public Integer getId() {
         return id;
     }
@@ -59,14 +69,6 @@ public class Filmes implements Serializable {
         this.titulo = titulo;
     }
 
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
     public String getDt_compra() {
         return dt_compra;
     }
@@ -75,14 +77,14 @@ public class Filmes implements Serializable {
         this.dt_compra = dt_compra;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
+    public Filmes(Integer id, String titulo, Genero genero, String dt_compra, String tipo) {
+        this.id = id;
+        this.titulo = titulo;
+        this.genero = genero;
+        this.dt_compra = dt_compra;
         this.tipo = tipo;
     }
-
+    
     @Override
     public String toString() {
         return "Filmes{" + "id=" + id + ", titulo=" + titulo + ", genero=" + genero + ", dt_compra=" + dt_compra + ", tipo=" + tipo + '}';

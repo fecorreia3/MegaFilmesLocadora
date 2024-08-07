@@ -25,10 +25,26 @@ public class lista_filme {
         Filmes filme = em.find(Filmes.class, 2);
         System.out.print(filme);
 
-        String jpql = "SELECT filmes FROM Filmes filmes";
-        Query query = em.createQuery(jpql);
-//        List<Filmes> pessoas = em.getResultList();
-
+        List<Filmes> listaFilmes = null;
+        
+        try{
+            listaFilmes = em.createQuery("from Filmes").getResultList();
+            
+        }catch(Exception e){
+            
+        }
+        em.close();
+        
+        
+        for(Filmes f: listaFilmes){
+            System.out.println("ID - Titulo - Genero - Data da Compra - tipo");
+            System.out.print(f.getId());
+            System.out.print(f.getTitulo());
+            System.out.print(f.getGenero().getNome());
+            System.out.print(f.getDt_compra());
+            
+        }
+        
     }
 
 }
