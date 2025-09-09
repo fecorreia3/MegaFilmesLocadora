@@ -20,7 +20,7 @@ public class Genero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_genero;
-    private String nome_genero;
+    private String genero_nome;
 
     public Integer getId_genero() {
         return id_genero;
@@ -30,12 +30,20 @@ public class Genero {
         this.id_genero = id_genero;
     }
 
-    public String getNome_genero() {
-        return nome_genero;
+    public String getGenero_nome() {
+        return genero_nome;
     }
 
-    public void setNome_genero(String nome_genero) {
-        this.nome_genero = nome_genero;
+    public void setGenero_nome(String genero_nome) {
+        this.genero_nome = genero_nome;
     }
 
+    public Genero(Integer id_genero, String genero_nome) {
+        this.id_genero = id_genero;
+        this.genero_nome = genero_nome;
+    }
+
+    public Genero(){
+
+    }
 }

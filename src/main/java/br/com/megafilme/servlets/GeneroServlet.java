@@ -26,7 +26,7 @@ public class GeneroServlet extends HttpServlet {
         super.service(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
         
         Genero genero = new Genero();
-        genero.setNome_genero(req.getParameter("genero_nome"));
+        genero.setGenero_nome(req.getParameter("genero_nome"));
         
         
         GeneroDAO dao = new GeneroDAO();

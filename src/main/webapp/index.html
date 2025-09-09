@@ -1,10 +1,148 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial da Locadora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .date-time {
+            margin-left: 1rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            color: #010101;
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: #343a40;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #6c757d;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        }
+/* Itens do submenu */
+.menu li ul li {
+  position: relative;
+}
+/* Links do submenu */
+.menu li ul li a {
+  padding: 10px 20px;
+  color: white;
+  background: #444;
+}
+/* Hover submenu */
+.menu li ul li a:hover {
+  background: #666;
+}
+/* Sub-submenu (nível 3) */
+.menu li ul li ul {
+  top: 0;
+  left: 100%;
+  background: #555;
+}
+/* Mostrar sub-submenu ao passar o mouse */
+.menu li ul li:hover > ul {
+  display: block;
+}
+
+
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <ul class="menu">
+        <li><a href="#cadastro">Cadastro</a>
+            <ul>
+                <li>Cadastra Cliente</li>
+                <li>Cadastra Filme</li>
+                <li>Cadastra Genero</li>
+                <li>Cadastra Preco</li>
+                <li>Cadastra Tipo</li>
+            </ul>
+        </li>
+        <li><a href="#aluguel">Aluguel</a></li>
+        <li><a href="#financeiro">Financeiro</a></li>
+        <li><a href="#ajuda">Ajuda</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+    </ul>
+
+
+    <div class="user-info">
+        <span id="user-name">Usuário Exemplo</span>
+        <span class="date-time" id="date-time"></span>
+    </div>
+
+</nav>
+
+<div class="container">
+    <h1>Bem-vindo à Locadora de Veículos</h1>
+    <p>Gerencie seus cadastros, aluguéis e finanças de forma eficiente. Navegue pelo menu acima para acessar as seções
+        desejadas.</p>
+</div>
+
+<footer class="footer">
+    <div>
+        <strong>Locadora XYZ Ltda</strong><br>
+        Endereço: Rua das Carretas, 123, Centro, Cidade - Estado, CEP: 12345-678<br>
+        CNPJ: 12.345.678/0001-99
+    </div>
+</footer>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const date = now.toLocaleDateString('pt-BR');
+        const time = now.toLocaleTimeString('pt-BR');
+        document.getElementById('date-time').textContent = date + ' ' + time;
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+</script>
+</body>
 </html>
+</content>
+</create_file>

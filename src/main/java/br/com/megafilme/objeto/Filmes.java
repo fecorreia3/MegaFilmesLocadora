@@ -4,11 +4,12 @@
  */
 package br.com.megafilme.objeto;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
@@ -16,17 +17,30 @@ import javax.persistence.ManyToOne;
  */
 
 @Entity
-public class Filme {
+@Table(name="filmes")
+public class Filmes implements Serializable {
+    private static final long serialVersionUID = 1L;
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+     @Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id_filme;
     private String titulo_filme;
-    @ManyToOne
-    private Genero genero_filme;
+    private String genero_filme;
     private String dt_compra_filme;
-    @ManyToOne
-    private Preco tipo_filme;
+    private String tipo_filme; //vhs, cd, blue ray, dvd
+
+
+    
+    public Filmes(){
+        
+    }
+
+    public Filmes(String titulo_filme, String genero_filme, String dt_compra_filme, String tipo_filme) {
+        this.titulo_filme = titulo_filme;
+        this.genero_filme = genero_filme;
+        this.dt_compra_filme = dt_compra_filme;
+        this.tipo_filme = tipo_filme;
+    }
 
     public Integer getId_filme() {
         return id_filme;
@@ -41,14 +55,15 @@ public class Filme {
     }
 
     public void setTitulo_filme(String titulo_filme) {
+        Integer teste = Integer.parseInt(titulo_filme);
         this.titulo_filme = titulo_filme;
     }
 
-    public Genero getGenero_filme() {
+    public String getGenero_filme() {
         return genero_filme;
     }
 
-    public void setGenero_filme(Genero genero_filme) {
+    public void setGenero_filme(String genero_filme) {
         this.genero_filme = genero_filme;
     }
 
@@ -60,13 +75,11 @@ public class Filme {
         this.dt_compra_filme = dt_compra_filme;
     }
 
-    public Preco getTipo_filme() {
+    public String getTipo_filme() {
         return tipo_filme;
     }
 
-    public void setTipo_filme(Preco tipo_filme) {
+    public void setTipo_filme(String tipo_filme) {
         this.tipo_filme = tipo_filme;
     }
-    
-    
 }

@@ -10,6 +10,7 @@ import br.com.megafilme.objeto.Genero;
 import java.io.IOException;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -72,17 +73,19 @@ public class GeneroDAO {
 
     public List<Genero> ListaGeral() throws IOException {
         EntityManager em = new Conecta().getConnection();
-        List<Genero> ListaGeneros = null;
 
-        try {
-            ListaGeneros = em.createQuery("from Genero e").getResultList();
-        } catch (Exception e) {
-            gravarLog(e.getMessage(), 1);
-        }
+            List<Genero> listaG = null;
+
+            try{
+                listaG = em.createQuery("from Genero g").getResultList();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
         em.clear();
         em.close();
 
-        return ListaGeneros;
+        return listaG;
     }
 
 }

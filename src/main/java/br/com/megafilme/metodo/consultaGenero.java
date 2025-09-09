@@ -26,7 +26,7 @@ public class consultaGenero {
             Genero genero = dao.localizaID(id);
             
             System.out.print("ID: "+ genero.getId_genero());
-            System.out.println(" Genero: "+ genero.getNome_genero());
+            System.out.println(" Genero: "+ genero.getGenero_nome());
             
         } catch (IOException e) {
              gravarLog(e.getMessage(), 1);

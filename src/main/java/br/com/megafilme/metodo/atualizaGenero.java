@@ -19,7 +19,7 @@ public class atualizaGenero {
     public atualizaGenero(Integer id, String genero) {
         Genero g = new Genero();
         g.setId_genero(id);
-        g.setNome_genero(genero);
+        g.setGenero_nome(genero);
         
         GeneroDAO dao = new GeneroDAO();
         try {

@@ -17,8 +17,8 @@ import java.util.logging.Logger;
 public class listaGenero {
     
     public static void main(String[] args){
+
         listaGenero l = new listaGenero();
-        
         
     }
     
@@ -30,8 +30,9 @@ public class listaGenero {
         try {
             for(Genero c: dao.ListaGeral()){
                 System.out.print("ID: " + c.getId_genero());
-                System.out.println(" Categoria: " + c.getNome_genero());
+                System.out.println(" Categoria: " + c.getGenero_nome());
             }
+
         } catch (IOException ex) {
             Logger.getLogger(listaGenero.class.getName()).log(Level.SEVERE, null, ex);
         }
