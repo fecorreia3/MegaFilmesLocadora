@@ -1,0 +1,11 @@
+br\com\megafilme\metodo\atualizaGenero.class
+br\com\megafilme\objeto\Filme.class
+br\com\megafilme\servlets\GeneroServlet.class
+br\com\megafilme\metodo\consultaGenero.class
+br\com\megafilme\objeto\Genero.class
+br\com\megafilme\dao\GeneroDAO.class
+br\com\megafilme\conexao\Conecta.class
+br\com\megafilme\metodo\listaGenero.class
+br\com\megafilme\logger\Logger.class
+br\com\megafilme\objeto\Preco.class
+br\com\megafilme\metodo\gravaGenero.class
